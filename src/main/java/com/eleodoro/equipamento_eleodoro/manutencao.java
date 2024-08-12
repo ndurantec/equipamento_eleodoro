@@ -1,12 +1,12 @@
 package com.eleodoro.equipamento_eleodoro;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 public class manutencao {
     private String local;
     private Float telefone;
     private String email;
-    private Date data;
+    private LocalDateTime data;
     private Float custo;
     //private Equipamento equipamento;
 
@@ -14,8 +14,8 @@ public class manutencao {
     public manutencao() {
     }
 
-    
-    public manutencao(String local, Float telefone, String email, Date data, Float custo) {
+
+    public manutencao(String local, Float telefone, String email, LocalDateTime data, Float custo) {
         this.local = local;
         this.telefone = telefone;
         this.email = email;
@@ -23,38 +23,57 @@ public class manutencao {
         this.custo = custo;
     }
 
+
     public String getLocal() {
         return local;
     }
+
+
     public void setLocal(String local) {
         this.local = local;
     }
+
+
     public Float getTelefone() {
         return telefone;
     }
+
+
     public void setTelefone(Float telefone) {
         this.telefone = telefone;
     }
+
+
     public String getEmail() {
         return email;
     }
+
+
     public void setEmail(String email) {
         this.email = email;
     }
-    public Date getData() {
+
+
+    public LocalDateTime getData() {
         return data;
     }
-    public void setData(Date data) {
+
+
+    public void setData(LocalDateTime data) {
         this.data = data;
     }
+
+
     public Float getCusto() {
         return custo;
     }
+
+
     public void setCusto(Float custo) {
         this.custo = custo;
     }
-  
-    
+
+
     public void enviarParaManuntencao() {
 
     }
@@ -76,6 +95,8 @@ public class manutencao {
         result = prime * result + ((custo == null) ? 0 : custo.hashCode());
         return result;
     }
+
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -120,8 +141,6 @@ public class manutencao {
                 + ", custo=" + custo + "]";
     }
 
-
     
-
 }
 
