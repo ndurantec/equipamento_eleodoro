@@ -1,8 +1,20 @@
 package com.eleodoro.equipamento_eleodoro;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class manutencao {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+
+@Entity
+public class manutencao implements Serializable{
+
+    @Id
+    private static final Long serialVersionUID = 1L;
+    public Long id;
+
+
     private String local;
     private Float telefone;
     private String email;
