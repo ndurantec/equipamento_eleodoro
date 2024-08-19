@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class fornecedor {
+public class Fornecedor {
 
     private static final Long serialVersionUID = 1L; 
 
@@ -23,11 +23,11 @@ public class fornecedor {
   private String endereco;
 
    
-    public fornecedor() {
+    public Fornecedor() {
     }
 
 
-    public fornecedor(String nome, String telefone, String endereco) {
+    public Fornecedor(String nome, String telefone, String endereco) {
         this.nome = nome;
         this.telefone = telefone;
         this.endereco = endereco;
@@ -83,7 +83,7 @@ public class fornecedor {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        fornecedor other = (fornecedor) obj;
+        Fornecedor other = (Fornecedor) obj;
         if (nome == null) {
             if (other.nome != null)
                 return false;
