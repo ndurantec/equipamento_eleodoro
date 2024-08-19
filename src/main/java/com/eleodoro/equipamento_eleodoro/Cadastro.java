@@ -1,7 +1,21 @@
 package com.eleodoro.equipamento_eleodoro;
 
-public class Cadastro {
+import java.io.Serializable;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Cadastro implements Serializable {
     
+@Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+
+    private static final Long serialVersionUID=1L;
+
+    private Long id;
     private String Nome;
     private String Marca;
     private String Setor;
@@ -26,6 +40,13 @@ public class Cadastro {
         return Nome;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public void setNome(String nome) {
         Nome = nome;
@@ -114,7 +135,7 @@ public class Cadastro {
         return true;
     }
 
-    
-    
+
+  
     
 }
