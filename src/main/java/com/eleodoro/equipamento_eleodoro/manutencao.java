@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 
@@ -11,6 +13,7 @@ import jakarta.persistence.Id;
 public class manutencao implements Serializable{
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private static final Long serialVersionUID = 1L;
     public Long id;
 
@@ -49,7 +52,7 @@ public class manutencao implements Serializable{
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public void setLocal(String local) {
         this.local = local;
     }
