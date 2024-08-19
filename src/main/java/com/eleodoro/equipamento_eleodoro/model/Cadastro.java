@@ -1,4 +1,4 @@
-package com.eleodoro.equipamento_eleodoro;
+package com.eleodoro.equipamento_eleodoro.model;
 
 public class Cadastro {
     
