@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class manutencao implements Serializable{
+public class Manutencao implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,11 +26,11 @@ public class manutencao implements Serializable{
     //private Equipamento equipamento;
 
     
-    public manutencao() {
+    public Manutencao() {
     }
 
 
-    public manutencao(String local, Float telefone, String email, LocalDateTime data, Float custo) {
+    public Manutencao(String local, Float telefone, String email, LocalDateTime data, Float custo) {
         this.local = local;
         this.telefone = telefone;
         this.email = email;
@@ -129,7 +129,7 @@ public class manutencao implements Serializable{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        manutencao other = (manutencao) obj;
+        Manutencao other = (Manutencao) obj;
         if (local == null) {
             if (other.local != null)
                 return false;
