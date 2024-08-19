@@ -35,12 +35,21 @@ public class manutencao implements Serializable{
         this.custo = custo;
     }
 
+    
 
     public String getLocal() {
         return local;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
     public void setLocal(String local) {
         this.local = local;
     }
@@ -152,6 +161,8 @@ public class manutencao implements Serializable{
         return "manutencao [local=" + local + ", telefone=" + telefone + ", email=" + email + ", data=" + data
                 + ", custo=" + custo + "]";
     }
+
+
 
     
 }
