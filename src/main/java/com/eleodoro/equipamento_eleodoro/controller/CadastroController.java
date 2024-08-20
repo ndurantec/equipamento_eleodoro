@@ -8,19 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/cadastro")
 public class CadastroController {
  
-    @GetMapping(value = "imprimir")
-      public void imprimir(){
+    @GetMapping(value = "/imprimir")
+    public void imprimir(){
         System.out.println("chegou em cadastro");
-
     }
-    
-
-
-
-
-
-
-
-
+   
 
 }
