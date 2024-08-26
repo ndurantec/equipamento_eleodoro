@@ -1,18 +1,19 @@
 package com.eleodoro.equipamento_eleodoro.model;
 
 public class Transporte {
-   public String Motorista;
-   public String origem;
-   public String destino;
 
-   public Transporte() {
-   }
+    public String Motorista;
+    public String origem;
+    public String destino;
 
-   public Transporte(String motorista, String origem, String destino) {
+    public Transporte() {
+    }
+
+    public Transporte(String motorista, String origem, String destino) {
     Motorista = motorista;
     this.origem = origem;
     this.destino = destino;
-   }
+    }
 
     public String getMotorista() {
     return Motorista;
