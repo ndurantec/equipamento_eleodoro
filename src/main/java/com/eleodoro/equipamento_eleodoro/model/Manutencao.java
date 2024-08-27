@@ -38,7 +38,6 @@ public class Manutencao implements Serializable{
         this.custo = custo;
     }
 
-    
 
     public String getLocal() {
         return local;
