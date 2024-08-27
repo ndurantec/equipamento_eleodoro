@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/manutencao")
 public class ManutencaoController {
     
-    @GetMapping(value = "imprimir")
-      public void imprimir(){
-        System.out.println("chegou na classe manutencao");
+    @GetMapping(value = "/imprimir")
+      public String imprimir(){
+        return "chegou na classe manutencao";
       }
 }
