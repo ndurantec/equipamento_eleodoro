@@ -10,10 +10,8 @@ public class ManutencaoDTO {
     private LocalDateTime data;
     private Float custo;
     
-    
     public ManutencaoDTO() {
     }
-
 
     public ManutencaoDTO(String local, Float telefone, String email, LocalDateTime data, Float custo) {
         this.local = local;
@@ -22,7 +20,6 @@ public class ManutencaoDTO {
         this.data = data;
         this.custo = custo;
     }
-
 
     public String getLocal() {
         return local;

@@ -6,7 +6,7 @@ public class CadastroDTO {
     private String Setor;
     private int ID;
    
-   
+
     public CadastroDTO() {
     }
 
