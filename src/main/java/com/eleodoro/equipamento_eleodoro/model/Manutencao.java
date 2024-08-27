@@ -35,12 +35,7 @@ public class Manutencao implements Serializable{
         this.email = email;
         this.data = data;
         this.custo = custo;
-<<<<<<< HEAD
     }
-
-=======
-    } 
->>>>>>> d362e0d630ec8a2c95f853947253a40ddafd7861
 
     public String getLocal() {
         return local;
