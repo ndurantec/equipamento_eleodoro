@@ -29,15 +29,18 @@ public class Manutencao implements Serializable{
     public Manutencao() {
     }
 
-
     public Manutencao(String local, Float telefone, String email, LocalDateTime data, Float custo) {
         this.local = local;
         this.telefone = telefone;
         this.email = email;
         this.data = data;
         this.custo = custo;
+<<<<<<< HEAD
     }
 
+=======
+    } 
+>>>>>>> d362e0d630ec8a2c95f853947253a40ddafd7861
 
     public String getLocal() {
         return local;
@@ -47,7 +50,6 @@ public class Manutencao implements Serializable{
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -56,56 +58,45 @@ public class Manutencao implements Serializable{
         this.local = local;
     }
 
-
     public Float getTelefone() {
         return telefone;
     }
-
 
     public void setTelefone(Float telefone) {
         this.telefone = telefone;
     }
 
-
     public String getEmail() {
         return email;
     }
-
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-
     public LocalDateTime getData() {
         return data;
     }
-
 
     public void setData(LocalDateTime data) {
         this.data = data;
     }
 
-
     public Float getCusto() {
         return custo;
     }
-
 
     public void setCusto(Float custo) {
         this.custo = custo;
     }
 
-
     public void enviarParaManuntencao() {
 
     }
-   
 
     public void receberDaManutencao() {
 
     }
-
 
     @Override
     public int hashCode() {
@@ -118,7 +109,6 @@ public class Manutencao implements Serializable{
         result = prime * result + ((custo == null) ? 0 : custo.hashCode());
         return result;
     }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -156,7 +146,6 @@ public class Manutencao implements Serializable{
             return false;
         return true;
     }
-
 
     @Override
     public String toString() {

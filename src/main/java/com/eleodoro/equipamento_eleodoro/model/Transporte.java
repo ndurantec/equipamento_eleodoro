@@ -10,35 +10,34 @@ public class Transporte {
     }
 
     public Transporte(String motorista, String origem, String destino) {
-    Motorista = motorista;
-    this.origem = origem;
-    this.destino = destino;
+        Motorista = motorista;
+        this.origem = origem;
+        this.destino = destino;
     }
 
     public String getMotorista() {
-    return Motorista;
+        return Motorista;
     }
 
     public void setMotorista(String motorista) {
-    Motorista = motorista;
+        Motorista = motorista;
     }
 
     public String getOrigem() {
-    return origem;
+        return origem;
     }
 
     public void setOrigem(String origem) {
-    this.origem = origem;
+        this.origem = origem;
     }
 
     public String getDestino() {
-    return destino;
+        return destino;
+    }
+    
+    public void setDestino(String destino) {
+        this.destino = destino;
     }
 
-    public void setDestino(String destino) {
-    this.destino = destino;
-    }
-   
-   
-   
+       
 }
