@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class FornecedorController {
     
     @GetMapping (value = "/imprimir")
-    public void imprimir(){
+    public String imprimir(){
 
-        System.out.println("chegou ate fornecedor");
+       return "chegou ate fornecedor";
 
     }
 }
