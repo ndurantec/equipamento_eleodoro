@@ -2,9 +2,11 @@ package com.eleodoro.equipamento_eleodoro.dto;
 
 import java.time.LocalDateTime;
 
+import com.eleodoro.equipamento_eleodoro.model.Manutencao;
+
 public class ManutencaoDTO {
 
-      private String local;
+    private String local;
     private Float telefone;
     private String email;
     private LocalDateTime data;
@@ -70,5 +72,8 @@ public class ManutencaoDTO {
         this.custo = custo;
     }
 
-    
+    public Manutencao novaManutencao() {
+        return new Manutencao(local, telefone, email, data, custo);
+    }
+
 }
