@@ -58,6 +58,9 @@ public class CadastroDTO {
         ID = iD;
     }
 
+    public cadastro novoCadastro {
+        return new novoCadastro;
+    }
     
     
 }
