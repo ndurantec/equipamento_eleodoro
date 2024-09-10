@@ -2,6 +2,7 @@ package com.eleodoro.equipamento_eleodoro.controller;
 
 import java.net.URI;
 
+import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -61,6 +62,18 @@ public class ManutencaoController {
       return null;
         
     }
-  
+   @PostMapping(value="/{id}")
+   public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Manutencao manutencao) {
+     
+    Optional <Manutencao> manutencaoBanco= manutencaoRepository.findById(id);
+
+    Manutencao manutencaoModificado = manutencaoBanco.get();
+
+    ManutencaoModificado.setNome(manutencao.getNome());
+
+    manutencaoRepository.save(manutencaoModificado);
+
+    return ResponseEntity.noContent().build();
+   }
 
 }
