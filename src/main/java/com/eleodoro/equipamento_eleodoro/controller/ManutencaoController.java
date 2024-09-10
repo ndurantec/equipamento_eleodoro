@@ -2,9 +2,11 @@ package com.eleodoro.equipamento_eleodoro.controller;
 
 import java.net.URI;
 
+import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,47 +25,55 @@ public class ManutencaoController {
     private ManutencaoRepository manutencaoRepository;
     
     @GetMapping(value = "/imprimir")
-      public String imprimir(){
-        return "chegou na classe manutencao";
-      }
+    public String imprimir(){
+      return "chegou na classe manutencao";
+    }
 
+    @PostMapping(value = "/insert")
+    public ResponseEntity<Manutencao> insert(@RequestBody ManutencaoDTO manutencaoDTO){
+    
+      Manutencao novaManutencao = manutencaoDTO.novaManutencao();
+      //manutencaoRepository.save(novaManutencao);
 
-
-
-
-
-
-
-      @PostMapping(value = "/insert")
-      public ResponseEntity<Manutencao> insert(@RequestBody ManutencaoDTO manutencaoDTO){
       
-       Manutencao novaManutencao = manutencaoDTO.novaManutencao();
-       manutencaoRepository.save(novaManutencao);
+      System.out.println("Chegou no metodo insert");
+      System.out.println(manutencaoDTO.toString());
+    
+    
+      URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+          .path("{/id}")
+          .buildAndExpand(novaManutencao.getId())
+          .toUri();
 
-       
-        System.out.println("Chegou no metodo insert");
-        System.out.println(manutencaoDTO.toString());
       
-      
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-        .path("{/id}")
-        .buildAndExpand(novaManutencao.getId())
-        .toUri();
+      return ResponseEntity.created(uri).body(novaManutencao);
 
+    
+    }
+
+     
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Manutencao> buscarPorId(@PathVariable Long id) {
         
-        return ResponseEntity.created(uri).body(novaManutencao);
-  
-      
-      }
+      //return manutencaoRepository.findById(id)
+      //  .map(registro -> ResponseEntity.ok().body(registro))
+      //  .orElse(ResponseEntity.notFound().build());
 
+      return null;
+        
+    }
+   @PostMapping(value="/{id}")
+   public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Manutencao manutencao) {
+     
+    Optional <Manutencao> manutencaoBanco= manutencaoRepository.findById(id);
 
+    Manutencao manutencaoModificado = manutencaoBanco.get();
 
+    ManutencaoModificado.setNome(manutencao.getNome());
 
- }
+    manutencaoRepository.save(manutencaoModificado);
 
+    return ResponseEntity.noContent().build();
+   }
 
-
-
- 
- 
- 
+}
