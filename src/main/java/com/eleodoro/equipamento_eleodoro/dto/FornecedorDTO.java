@@ -37,4 +37,9 @@ public class FornecedorDTO {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+    
+    public Fornecedor novoFornecedor{
+        return new novoFornecedor;
+    }
+    
 }
