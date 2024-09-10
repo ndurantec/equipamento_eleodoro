@@ -10,11 +10,13 @@ import jakarta.persistence.Id;
 
 
 @Entity
-public class Manutencao implements Serializable{
+public class Manutencao implements Serializable {
+
+    private static final Long serialVersionUID = 1L;
+    
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private static final Long serialVersionUID = 1L;
     public Long id;
 
 
