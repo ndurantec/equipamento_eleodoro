@@ -5,27 +5,24 @@ import java.time.LocalDateTime;
 import com.eleodoro.equipamento_eleodoro.model.Manutencao;
 
 public class ManutencaoDTO {
-
+   
     private String local;
-    private Float telefone;
+    private double telefone;
     private String email;
     private LocalDateTime data;
     private Float custo;
+    //private Equipamento equipamento;
+    private String responavel;
+    
     
     public ManutencaoDTO() {
     }
 
-    public ManutencaoDTO(String local, Float telefone, String email, LocalDateTime data, Float custo) {
-        this.local = local;
-        this.telefone = telefone;
-        this.email = email;
-        this.data = data;
-        this.custo = custo;
-    }
 
     public String getLocal() {
         return local;
     }
+
 
 
     public void setLocal(String local) {
@@ -33,14 +30,17 @@ public class ManutencaoDTO {
     }
 
 
-    public Float getTelefone() {
+
+    public double getTelefone() {
         return telefone;
     }
 
 
-    public void setTelefone(Float telefone) {
+
+    public void setTelefone(double telefone) {
         this.telefone = telefone;
     }
+
 
 
     public String getEmail() {
@@ -48,9 +48,11 @@ public class ManutencaoDTO {
     }
 
 
+
     public void setEmail(String email) {
         this.email = email;
     }
+
 
 
     public LocalDateTime getData() {
@@ -58,9 +60,11 @@ public class ManutencaoDTO {
     }
 
 
+
     public void setData(LocalDateTime data) {
         this.data = data;
     }
+
 
 
     public Float getCusto() {
@@ -68,12 +72,25 @@ public class ManutencaoDTO {
     }
 
 
+
     public void setCusto(Float custo) {
         this.custo = custo;
     }
 
-    public Manutencao novaManutencao() {
-        return new Manutencao(local, telefone, email, data, custo);
+
+
+    public String getResponavel() {
+        return responavel;
     }
 
+
+
+    public void setResponavel(String responavel) {
+        this.responavel = responavel;
+    }
+
+    
+    public Manutencao novaManutencao() {
+        return new Manutencao(null, local, telefone, email, data, custo, responavel);
+    }
 }

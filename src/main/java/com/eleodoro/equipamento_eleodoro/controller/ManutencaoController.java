@@ -2,9 +2,10 @@ package com.eleodoro.equipamento_eleodoro.controller;
 
 import java.net.URI;
 
-import org.apache.el.stream.Optional;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import com.eleodoro.equipamento_eleodoro.model.Manutencao;
 import com.eleodoro.equipamento_eleodoro.repository.ManutencaoRepository;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping(value = "/manutencao")
 public class ManutencaoController {
 
@@ -69,7 +71,7 @@ public class ManutencaoController {
 
     Manutencao manutencaoModificado = manutencaoBanco.get();
 
-    ManutencaoModificado.setNome(manutencao.getNome());
+    manutencaoModificado.setLocal(manutencao.getLocal());
 
     manutencaoRepository.save(manutencaoModificado);
 
