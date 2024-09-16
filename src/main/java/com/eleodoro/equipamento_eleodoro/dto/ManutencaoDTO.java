@@ -62,6 +62,7 @@ public class ManutencaoDTO {
 
 
     public void setData(LocalDateTime data) {
+        System.out.println("A data --> " + data);
         this.data = data;
     }
 
@@ -89,7 +90,7 @@ public class ManutencaoDTO {
         this.responavel = responavel;
     }
 
-    
+
     public Manutencao novaManutencao() {
         return new Manutencao(null, local, telefone, email, data, custo, responavel);
     }
