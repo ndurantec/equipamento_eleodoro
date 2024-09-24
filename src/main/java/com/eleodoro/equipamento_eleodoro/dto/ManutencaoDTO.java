@@ -6,39 +6,26 @@ import com.eleodoro.equipamento_eleodoro.model.Manutencao;
 
 public class ManutencaoDTO {
    
-    private String local;
-    private double telefone;
+    private String nome;
     private String email;
+    private double telefone;
     private LocalDateTime data;
     private Float custo;
     //private Equipamento equipamento;
-    private String responavel;
+    private String local;
     
     
     public ManutencaoDTO() {
     }
 
-
-    public String getLocal() {
-        return local;
+    public String getNome() {
+        return nome;
     }
 
 
 
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
-
-
-    public double getTelefone() {
-        return telefone;
-    }
-
-
-
-    public void setTelefone(double telefone) {
-        this.telefone = telefone;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
 
@@ -55,6 +42,18 @@ public class ManutencaoDTO {
 
 
 
+    public double getTelefone() {
+        return telefone;
+    }
+
+
+
+    public void setTelefone(double telefone) {
+        this.telefone = telefone;
+    }
+
+
+
     public LocalDateTime getData() {
         return data;
     }
@@ -62,7 +61,6 @@ public class ManutencaoDTO {
 
 
     public void setData(LocalDateTime data) {
-        System.out.println("A data --> " + data);
         this.data = data;
     }
 
@@ -80,18 +78,21 @@ public class ManutencaoDTO {
 
 
 
-    public String getResponavel() {
-        return responavel;
+    public String getLocal() {
+        return local;
     }
 
 
 
-    public void setResponavel(String responavel) {
-        this.responavel = responavel;
+    public void setLocal(String local) {
+        this.local = local;
     }
-
 
     public Manutencao novaManutencao() {
-        return new Manutencao(null, local, telefone, email, data, custo, responavel);
+        return new Manutencao(null, nome, email, telefone, data, custo, local);
     }
+
+
+
+   
 }
