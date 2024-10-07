@@ -32,11 +32,11 @@ public class LocalController {
       return "chegou na classe local";
     }
 
-    @PostMapping(value = "/insert")
+    @PostMapping(value = "/cadastrar")
     public ResponseEntity<Local> insert(@RequestBody LocalDTO localDTO){
     
       Local novoLocal = localDTO.novoLocal();
-      //localRepository.save(novolocal);
+      localRepository.save(novoLocal);
 
       
       System.out.println("Chegou no metodo insert");
@@ -65,17 +65,18 @@ public class LocalController {
       return null;
         
     }
-   @PostMapping(value="/{id}")
-   public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Local local) {
+
+  //  @PostMapping(value="/{id}")
+  //  public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Local local) {
      
-    Optional <Local> localBanco= localRepository.findById(id);
+  //   Optional <Local> localBanco= localRepository.findById(id);
 
-    Local localModificado = localBanco.get();
+  //   Local localModificado = localBanco.get();
 
-    localModificado.setLocal(local.getLocal());
+  //   localModificado.setLocal(local.getLocal());
 
-    localRepository.save(localModificado);
+  //   localRepository.save(localModificado);
 
-    return ResponseEntity.noContent().build(); 
-   }
+  //   return ResponseEntity.noContent().build(); 
+  //  }
 }
