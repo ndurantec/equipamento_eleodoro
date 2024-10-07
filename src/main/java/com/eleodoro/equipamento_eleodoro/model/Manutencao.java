@@ -28,7 +28,7 @@ public class Manutencao implements Serializable {
     private String local;
 
     
-    
+    @Deprecated
     public Manutencao() {
     }
 

@@ -14,7 +14,7 @@ public class ManutencaoDTO {
     //private Equipamento equipamento;
     private String local;
     
-    
+    @Deprecated  
     public ManutencaoDTO() {
     }
 
