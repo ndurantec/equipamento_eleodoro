@@ -24,7 +24,7 @@ public class Manutencao implements Serializable {
     private double telefone;
     private LocalDateTime data;
     private Float custo;
-    //private Equipamento equipamento;
+    private Equipamento equipamento;
     private String local;
 
     
@@ -34,14 +34,18 @@ public class Manutencao implements Serializable {
 
 
 
+   
+
+
     public Manutencao(Long id, String nome, String email, double telefone, LocalDateTime data, Float custo,
-            String local) {
+            Equipamento equipamento, String local) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.data = data;
         this.custo = custo;
+        this.equipamento = equipamento;
         this.local = local;
     }
 
@@ -53,9 +57,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public Long getId() {
         return id;
     }
+
+
+
 
 
 
@@ -65,9 +75,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public String getNome() {
         return nome;
     }
+
+
+
 
 
 
@@ -77,9 +93,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public String getEmail() {
         return email;
     }
+
+
+
 
 
 
@@ -89,9 +111,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public double getTelefone() {
         return telefone;
     }
+
+
+
 
 
 
@@ -101,9 +129,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public LocalDateTime getData() {
         return data;
     }
+
+
+
 
 
 
@@ -113,9 +147,15 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     public Float getCusto() {
         return custo;
     }
+
+
+
 
 
 
@@ -125,15 +165,42 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
+
+
+
+
+
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
+
+
+
+
+
+
     public String getLocal() {
         return local;
     }
 
 
 
+
+
+
     public void setLocal(String local) {
         this.local = local;
     }
+
+
+
 
 
 
@@ -149,9 +216,13 @@ public class Manutencao implements Serializable {
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + ((data == null) ? 0 : data.hashCode());
         result = prime * result + ((custo == null) ? 0 : custo.hashCode());
+        result = prime * result + ((equipamento == null) ? 0 : equipamento.hashCode());
         result = prime * result + ((local == null) ? 0 : local.hashCode());
         return result;
     }
+
+
+
 
 
 
@@ -191,6 +262,11 @@ public class Manutencao implements Serializable {
                 return false;
         } else if (!custo.equals(other.custo))
             return false;
+        if (equipamento == null) {
+            if (other.equipamento != null)
+                return false;
+        } else if (!equipamento.equals(other.equipamento))
+            return false;
         if (local == null) {
             if (other.local != null)
                 return false;
@@ -201,13 +277,17 @@ public class Manutencao implements Serializable {
 
 
 
+
+
+
     @Override
     public String toString() {
         return "Manutencao [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + ", data="
-                + data + ", custo=" + custo + ", local=" + local + "]";
+                + data + ", custo=" + custo + ", equipamento=" + equipamento + ", local=" + local + "]";
     }
 
-   
+
+      
 
     
 }

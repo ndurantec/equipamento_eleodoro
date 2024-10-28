@@ -23,11 +23,9 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setNome(String nome) {
         this.nome = nome;
     }
-
 
 
     public String getEmail() {
@@ -35,11 +33,9 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setEmail(String email) {
         this.email = email;
     }
-
 
 
     public double getTelefone() {
@@ -47,11 +43,9 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setTelefone(double telefone) {
         this.telefone = telefone;
     }
-
 
 
     public LocalDateTime getData() {
@@ -59,11 +53,9 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setData(LocalDateTime data) {
         this.data = data;
     }
-
 
 
     public Float getCusto() {
@@ -71,11 +63,19 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setCusto(Float custo) {
         this.custo = custo;
     }
 
+
+   // public Equipamento getEquipamento() {
+    //    return equipamento;
+   // }
+
+
+    //public void setEquipamento(Equipamento equipamento) {
+   //     this.equipamento = equipamento;
+    //}
 
 
     public String getLocal() {
@@ -83,13 +83,13 @@ public class ManutencaoDTO {
     }
 
 
-
     public void setLocal(String local) {
         this.local = local;
     }
 
+
     public Manutencao novaManutencao() {
-        return new Manutencao(null, nome, email, telefone, data, custo, local);
+        return new Manutencao(null, nome, email, telefone, data, custo, null, local);
     }
 
 
