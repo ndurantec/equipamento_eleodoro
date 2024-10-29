@@ -33,48 +33,48 @@ public class EquipamentoController {
     public ResponseEntity<Equipamento> insert(@RequestBody EquipamentoDTO equipamentoDTO){
     
       Equipamento novoEquipamento = equipamentoDTO.novoEquipamento();
-      //manutencaoRepository.save(novaManutencao);
+      equipamentoRepository.save(novoEquipamento);
 
       
       System.out.println("Chegou no metodo insert");
       System.out.println(equipamentoDTO.toString());
     
     
-    //   URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-    //       .path("{/id}")
-    //       .buildAndExpand(novoEquipamento.getId())
-    //       .toUri();
+         URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
+             .path("{/id}")
+             .buildAndExpand(novoEquipamento.getId())
+             .toUri();
 
       
-      //return ResponseEntity.created(uri).body(novoEquipamento);
-      return null;
+      return ResponseEntity.created(uri).body(novoEquipamento);
+      
 
     
     }
 
      
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Equipamento> buscarPorId(@PathVariable Long id) {
+  //   @GetMapping(value = "/{id}")
+  //   public ResponseEntity<Equipamento> buscarPorId(@PathVariable Long id) {
         
-      //return equipamentoRepository.findById(id)
-      //  .map(registro -> ResponseEntity.ok().body(registro))
-      //  .orElse(ResponseEntity.notFound().build());
+  //       return EquipamentoRepository.findById(id)
+  //         .map(registro -> ResponseEntity.ok().body(registro))
+  //         .orElse(ResponseEntity.notFound().build());
 
-      return null;
+  //     return null;
         
-    }
-   @PostMapping(value="/{id}")
-   public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Equipamento equipamento) {
+  //   }
+  //  @PostMapping(value="/{id}")
+  //  public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Equipamento equipamento) {
      
-    // Optional <Equipamento> equipamentoBanco= equipamentoRepository.findById(id);
+  //    Optional <Equipamento> equipamentoBanco= equipamentoRepository.findById(id);
 
-    // Equipamento manutencaoModificado = equipamentoBanco.get();
+  //    Equipamento manutencaoModificado = equipamentoBanco.get();
 
-    // equipamentoModificado.setLocal(equipamento.getLocal());
+  //    equipamentoModificado.setLocal(equipamento.getLocal());
 
-    // equipamentoRepository.save(equipamentoModificado);
+  //    equipamentoRepository.save(equipamentoModificado);
 
-    return ResponseEntity.noContent().build();
-   }
+  //   return ResponseEntity.noContent().build();
+  //  }
 
 }

@@ -2,10 +2,12 @@ package com.eleodoro.equipamento_eleodoro.model;
 
 import java.io.Serializable;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity(name = "Lugar")
 public class Local implements Serializable{
     
     private static final Long serialversionUID_ = 1L;
@@ -15,14 +17,19 @@ public class Local implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    private Local local;
+    private String nome;
 
+    @Deprecated
     public Local() {
     }
-
-    public Local(Long id, Local local) {
+    
+    public Local(Long id, String nome) {
         this.id = id;
-        this.local = local;
+        this.nome = nome;
+    }
+
+    public Local(String nome) {
+        this.nome = nome;
     }
 
     public static Long getSerialversionuid() {
@@ -37,12 +44,17 @@ public class Local implements Serializable{
         this.id = id;
     }
 
-    public Local getLocal() {
-        return local;
+    public String getNome() {
+        return nome;
     }
 
-    public void setLocal(Local local) {
-        this.local = local;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return "Local [id=" + id + ", nome=" + nome + "]";
     }
 
     @Override
@@ -50,7 +62,7 @@ public class Local implements Serializable{
         final int prime = 31;
         int result = 1;
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((local == null) ? 0 : local.hashCode());
+        result = prime * result + ((nome == null) ? 0 : nome.hashCode());
         return result;
     }
 
@@ -68,17 +80,12 @@ public class Local implements Serializable{
                 return false;
         } else if (!id.equals(other.id))
             return false;
-        if (local == null) {
-            if (other.local != null)
+        if (nome == null) {
+            if (other.nome != null)
                 return false;
-        } else if (!local.equals(other.local))
+        } else if (!nome.equals(other.nome))
             return false;
         return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Local [id=" + id + ", local=" + local + "]";
     }
 
     

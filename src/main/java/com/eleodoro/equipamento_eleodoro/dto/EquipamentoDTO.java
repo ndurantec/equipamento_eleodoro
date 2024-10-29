@@ -1,20 +1,22 @@
 package com.eleodoro.equipamento_eleodoro.dto;
 
-import org.springframework.cglib.core.Local;
-
 import com.eleodoro.equipamento_eleodoro.model.Equipamento;
 
 public class EquipamentoDTO {
 
+
     private String nome;
-  //  private Local local;
-    private String marca;
-    private boolean status;
+    private String local;
+    private int marca;
+    private String status;
     private int numeracao;
    
    
+   
+    @Deprecated
     public EquipamentoDTO() {
     }
+
 
 
     public String getNome() {
@@ -22,29 +24,47 @@ public class EquipamentoDTO {
     }
 
 
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
 
-    public String getMarca() {
+
+    public String getLocal() {
+        return local;
+    }
+
+
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+
+
+    public int getMarca() {
         return marca;
     }
 
 
-    public void setMarca(String marca) {
+
+    public void setMarca(int marca) {
         this.marca = marca;
     }
 
 
-    public boolean isStatus() {
+
+    public String getStatus() {
         return status;
     }
 
 
-    public void setStatus(boolean status) {
+
+    public void setStatus(String status) {
         this.status = status;
     }
+
 
 
     public int getNumeracao() {
@@ -52,12 +72,16 @@ public class EquipamentoDTO {
     }
 
 
+
     public void setNumeracao(int numeracao) {
         this.numeracao = numeracao;
     }
-  
-    public Equipamento novoEquipamento() {
-        return  null;
+
+      public Equipamento novoEquipamento() {
+        return new Equipamento(nome, local, marca, status, numeracao);
     }
+
+
+    
 
 }
