@@ -79,4 +79,13 @@ public class LocalController {
 
   //   return ResponseEntity.noContent().build(); 
   //  }
+ 
+ // @DeleteMapping
+ //public ResponseEntity<Local> delete(@PathVariable Long id){
+   // if(LocalRepository.existsById(id)){
+     //  LocalRepository.deleteById(id);
+       //return ResponseEntity.noContent().build();
+    //}
+    return ResponseEntity.notFound().build();
+}
 }
