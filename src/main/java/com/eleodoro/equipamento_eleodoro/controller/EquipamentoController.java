@@ -1,6 +1,7 @@
 package com.eleodoro.equipamento_eleodoro.controller;
 
 import java.net.URI;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -53,29 +54,28 @@ public class EquipamentoController {
     
     }
 
-     
-  //   @GetMapping(value = "/{id}")
-  //   public ResponseEntity<Equipamento> buscarPorId(@PathVariable Long id) {
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Equipamento> buscarPorId(@PathVariable Long id) {
         
-  //       return EquipamentoRepository.findById(id)
-  //         .map(registro -> ResponseEntity.ok().body(registro))
-  //         .orElse(ResponseEntity.notFound().build());
+      //return equipamentoRepository.findById(id)
+      //.map(registro -> ResponseEntity.ok().body(registro))
+      //.orElse(ResponseEntity.notFound().build());
 
-  //     return null;
+      return null;
         
-  //   }
-  //  @PostMapping(value="/{id}")
-  //  public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Equipamento equipamento) {
+     }
+    @PostMapping(value="/{id}")
+    public ResponseEntity<Void> update (@PathVariable Long id, @RequestBody Equipamento equipamento) {
      
-  //    Optional <Equipamento> equipamentoBanco= equipamentoRepository.findById(id);
+     Optional <Equipamento> equipamentoBanco= equipamentoRepository.findById(id);
 
-  //    Equipamento manutencaoModificado = equipamentoBanco.get();
+     Equipamento equipamentoModificado = equipamentoBanco.get();
 
-  //    equipamentoModificado.setLocal(equipamento.getLocal());
+     equipamentoModificado.setLocal(equipamento.getLocal());
 
-  //    equipamentoRepository.save(equipamentoModificado);
+     equipamentoRepository.save(equipamentoModificado);
 
-  //   return ResponseEntity.noContent().build();
-  //  }
+     return ResponseEntity.noContent().build();
+    }
 
 }
