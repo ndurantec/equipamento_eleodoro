@@ -15,6 +15,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.eleodoro.equipamento_eleodoro.dto.EquipamentoDTO;
 import com.eleodoro.equipamento_eleodoro.model.Equipamento;
+import com.eleodoro.equipamento_eleodoro.repository.EquipamentoRepository;
 
 @RestController
 @CrossOrigin("*")
@@ -22,7 +23,7 @@ import com.eleodoro.equipamento_eleodoro.model.Equipamento;
 public class EquipamentoController {
 
     @Autowired
-    private EquipamentoController equipamentoRepository;
+    private EquipamentoRepository equipamentoRepository;
     
     @GetMapping(value = "/imprimir")
     public String imprimir(){

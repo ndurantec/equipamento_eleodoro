@@ -38,13 +38,7 @@ public class Equipamento implements Serializable {
         this.status = status;
         this.numeracao = numeracao;
     }
-
-
-    public static Long getSerialversionuid() {
-        return serialVersionUID;
-    }
-
-
+  
     public Long getId() {
         return id;
     }
