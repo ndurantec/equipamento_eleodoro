@@ -6,9 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.eleodoro.equipamento_eleodoro.dto.EquipamentoDTO;
 import com.eleodoro.equipamento_eleodoro.model.Equipamento;
+import com.eleodoro.equipamento_eleodoro.model.Manutencao;
 import com.eleodoro.equipamento_eleodoro.repository.EquipamentoRepository;
 
 @RestController
@@ -57,9 +60,9 @@ public class EquipamentoController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Equipamento> buscarPorId(@PathVariable Long id) {
         
-      //return equipamentoRepository.findById(id)
-      //.map(registro -> ResponseEntity.ok().body(registro))
-      //.orElse(ResponseEntity.notFound().build());
+      // return equipamentoRepository.findById(id)
+      // .map(registro -> ResponseEntity.ok().body(registro))
+      // .orElse(ResponseEntity.notFound().build());
 
       return null;
         
@@ -78,4 +81,14 @@ public class EquipamentoController {
      return ResponseEntity.noContent().build();
     }
 
+    @DeleteMapping (value = "/{id}")
+     public ResponseEntity<Equipamento> delete(@PathVariable Long id){
+       if(equipamentoRepository.existsById(id)){
+          equipamentoRepository.deleteById(id);
+          return ResponseEntity.noContent().build();
+       }
+       return ResponseEntity.notFound().build();
+   }
+
+  
 }
