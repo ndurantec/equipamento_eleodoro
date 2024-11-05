@@ -79,6 +79,12 @@ public class ManutencaoController {
     return ResponseEntity.noContent().build();
    }
 
-
-   
+   @DeleteMapping(value = "/{id}")
+   public ResponseEntity<Manutencao> delete(@PathVariable Long id){
+       if(manutencaoRepository.existsById(id)){
+          manutencaoRepository.deleteById(id);
+          return ResponseEntity.noContent().build();
+       }
+       return ResponseEntity.notFound().build();
+   }
 }
