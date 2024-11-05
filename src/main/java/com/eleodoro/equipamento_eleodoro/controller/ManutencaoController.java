@@ -58,11 +58,11 @@ public class ManutencaoController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<Manutencao> buscarPorId(@PathVariable Long id) {
         
-      //return manutencaoRepository.findById(id)
-      //  .map(registro -> ResponseEntity.ok().body(registro))
-      //  .orElse(ResponseEntity.notFound().build());
+      return manutencaoRepository.findById(id)
+       .map(registro -> ResponseEntity.ok().body(registro))
+       .orElse(ResponseEntity.notFound().build());
 
-      return null;
+      //return null;
         
     }
    @PostMapping(value="/{id}")
